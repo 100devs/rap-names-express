@@ -9,7 +9,7 @@ let db,
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
-        console.log('Connected to Database')
+        console.log(`Connected to ${dbName} Database`)
         db = client.db(dbName)
     })
     
@@ -30,6 +30,7 @@ app.get('/',(request, response)=>{
 app.post('/addRapper', (request, response) => {
     db.collection('rappers').insertOne(request.body)
     .then(result => {
+        console.log('Rapper Added')
         response.redirect('/')
     })
     .catch(error => console.error(error))
@@ -45,6 +46,6 @@ app.delete('/deleteRapper', (request, response) => {
 
 })
 
-app.listen(PORT, ()=>{
+app.listen(process.env.PORT || PORT, ()=>{
     console.log(`Server running on port ${PORT}`)
 })
