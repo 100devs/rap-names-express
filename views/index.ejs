@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Current Rappers</h1>
+    <ul class="rappers">
+    <% for(let i=0; i < info.length; i++) {%>
+        <li class="rapper">
+            <span><%= info[i].stageName %></span>
+            <span><%= info[i].birthName %></span>
+            <span class='del'>delete</span>
+        </li>
+    <% } %>
+    </ul>
+
+    <h2>Add A Rapper:</h2>
+
+    <form action="/addRapper" method="POST">
+        <input type="text" placeholder="Stage Name" name="stageName">
+        <input type="text" placeholder="Birth Name" name="birthName">
+        <input type="submit">
+    </form>
+    
+
+    <script src='main.js'></script>
+</body>
+</html>
