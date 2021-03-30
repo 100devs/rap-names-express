@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Current Rappers</h1>
-    <ul class="rappers">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Planets of the Solar System</title>
+
+		<!-- external CSS link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+  <body>
+
+    <h1>Learn about the Planets in our Solar System!</h1>
+
+		<form action="/addPlanet" method="POST">
+			<input type="text" placeholder="planet name" name="planetName"></input>
+			<input type="submit">
+		</form>
+
+    <ul class="planets">
     <% for(let i=0; i < info.length; i++) {%>
-        <li class="rapper">
-            <span><%= info[i].stageName %></span>
-            <span><%= info[i].birthName %></span>
-            <span class='del'>delete</span>
+        <li class="planets">
+            <span id=name> <%= info[i].planetName %> </span>
+            <!-- <span id=distanceFromSun><%= info[i].distanceFromSun %></span> -->
+            <!-- <span id=type><%= info[i].type %></span> -->
+            <!-- <span id=funFact><%= info[i].funFact %></span> -->
+						<span class='del'>delete</span>
         </li>
     <% } %>
     </ul>
 
-    <h2>Add A Rapper:</h2>
-
-    <form action="/addRapper" method="POST">
-        <input type="text" placeholder="Stage Name" name="stageName">
-        <input type="text" placeholder="Birth Name" name="birthName">
-        <input type="submit">
-    </form>
-    
-
     <script src='main.js'></script>
-</body>
+  </body>
 </html>

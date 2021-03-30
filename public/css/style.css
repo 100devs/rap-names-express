@@ -1,0 +1,37 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* h1, input, button, h2, h3(3) */
+
+*{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+h1, input, section{
+  margin-left: 200px;
+}
+
+h1, h2{
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+section{
+  margin-right: 400px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
