@@ -34,7 +34,7 @@
 
 10. Don't forget to replace `<password>` with your password
 
-![Gif in a nutshell](https://cvws.icloud-content.com/B/AVZ6P7Azd--C4rMdZjc8qvOyJAwrAXxcJcqe1vXjjIxyExbHHSc-3T7e/Rapper-Names-Express+MongoDB+setup.gif?o=Aja-MODbGfPAKBORKRNAQD5QjkGRxLMxn0T_L_0cNoW6&v=1&x=3&a=CAogV3InePBaWnJg6cgUGwBj0kcN2qHr04RQ9EWg_e8O4zUSbRC7r-evjy8Y26aesI8vIgEAUgSyJAwrWgQ-3T7eaiYaNhsbM7kKgNACmrpzHHcjV8pXYV6mfQKd01h4EICNWKZYvz2l_3Imz-2cZOM8s9YMvwsKjFo-yvE1jXn9ie7ucafeoYw4ImqZOT4MvxU&e=1619035394&fl=&r=04d39f85-4966-499f-ada1-743037cce1e5-1&k=HrYWYaPKcySSqJ8ZWiVqJw&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=34&s=jHCJ8s3NIXWyiYU-P68o-D-TpY4&cd=i)
+![Gif in a nutshell](https://user-images.githubusercontent.com/51871665/115613175-f099a400-a2a0-11eb-8f75-b80db13d85df.gif)
 
 ## Run locally
 
@@ -42,10 +42,13 @@
     ```
     node server
     ```
-
 - Visit your app at http://localhost:2121
 
 
 ## Demo
 
-![What you'll see]()
+- What you'll see
+
+https://user-images.githubusercontent.com/51871665/115613285-1161f980-a2a1-11eb-9e82-1ab6807240c3.mov
+
+
