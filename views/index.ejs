@@ -18,24 +18,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Current Rappers</h1>
-    <ul class="rappers">
+    <h1>Your Safe Security Box</h1>
+    <ul class="keys">
     <% for(let i=0; i < info.length; i++) {%>
-        <li class="rapper">
-            <span><%= info[i].stageName %></span>
-            <span><%= info[i].birthName %></span>
+        <li class="key">
+            <span><%= info[i].appName %></span>
+            <span><%= info[i].securityCode %></span>
             <span><%= info[i].likes %></span>
-            <span class='fa fa-thumbs-up'></span>
+            <span class='fa fa-lock'></span>
             <span class='fa fa-trash'></span>
         </li>
     <% } %>
     </ul>
 
-    <h2>Add A Rapper:</h2>
+    <h2>Add Application and Security Code</h2>
 
-    <form action="/addRapper" method="POST">
-        <input type="text" placeholder="Stage Name" name="stageName">
-        <input type="text" placeholder="Birth Name" name="birthName">
+    <form action="/addKey" method="POST">
+        <input type="text" placeholder="Application" name="appName">
+        <input type="text" placeholder="Password" name="securityCode">
         <input type="submit">
     </form>
     
