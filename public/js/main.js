@@ -1,24 +1,24 @@
 const deleteText = document.querySelectorAll('.fa-trash')
-const thumbText = document.querySelectorAll('.fa-thumbs-up')
+const thumbText = document.querySelectorAll('.fa-lock')
 
 Array.from(deleteText).forEach((element)=>{
-    element.addEventListener('click', deleteRapper)
+    element.addEventListener('click', deleteKey)
 })
 
 Array.from(thumbText).forEach((element)=>{
     element.addEventListener('click', addLike)
 })
 
-async function deleteRapper(){
-    const sName = this.parentNode.childNodes[1].innerText
-    const bName = this.parentNode.childNodes[3].innerText
+async function deleteKey(){
+    const aName = this.parentNode.childNodes[1].innerText
+    const sCode = this.parentNode.childNodes[3].innerText
     try{
-        const response = await fetch('deleteRapper', {
+        const response = await fetch('deleteKey', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'stageNameS': sName,
-              'birthNameS': bName
+              'appNameS': aName,
+              'securityCodeS': sCode
             })
           })
         const data = await response.json()
@@ -31,16 +31,16 @@ async function deleteRapper(){
 }
 
 async function addLike(){
-    const sName = this.parentNode.childNodes[1].innerText
-    const bName = this.parentNode.childNodes[3].innerText
+    const aName = this.parentNode.childNodes[1].innerText
+    const sCode = this.parentNode.childNodes[3].innerText
     const tLikes = Number(this.parentNode.childNodes[5].innerText)
     try{
         const response = await fetch('addOneLike', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'stageNameS': sName,
-              'birthNameS': bName,
+              'appNameS': aName,
+              'securityCodeS': sCode,
               'likesS': tLikes
             })
           })

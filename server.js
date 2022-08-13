@@ -1,18 +1,18 @@
-const express = require('express')
-const app = express()
-const MongoClient = require('mongodb').MongoClient
-const PORT = 2121
-require('dotenv').config()
+const express = require('express') //connect express to server
+const app = express() //connect application to express server
+const MongoClient = require('mongodb').MongoClient //connect MongoDB to server
+const PORT = 2121 //port localhost
+require('dotenv').config() //database string
 
 
 let db,
     dbConnectionStr = process.env.DB_STRING,
-    dbName = 'rap'
+    dbName = 'security' //name of database
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
         console.log(`Connected to ${dbName} Database`)
-        db = client.db(dbName)
+        db = client.db(dbName) 
     })
     
 app.set('view engine', 'ejs')
@@ -22,16 +22,16 @@ app.use(express.json())
 
 
 app.get('/',(request, response)=>{
-    db.collection('rappers').find().sort({likes: -1}).toArray()
+    db.collection('keys').find().sort({likes: -1}).toArray()
     .then(data => {
         response.render('index.ejs', { info: data })
     })
     .catch(error => console.error(error))
 })
 
-app.post('/addRapper', (request, response) => {
-    db.collection('rappers').insertOne({stageName: request.body.stageName,
-    birthName: request.body.birthName, likes: 0})
+app.post('/addKey', (request, response) => {
+    db.collection('keys').insertOne({appName: request.body.appName,
+    securityCode: request.body.securityCode, likes: 0})
     .then(result => {
         console.log('Rapper Added')
         response.redirect('/')
@@ -40,7 +40,7 @@ app.post('/addRapper', (request, response) => {
 })
 
 app.put('/addOneLike', (request, response) => {
-    db.collection('rappers').updateOne({stageName: request.body.stageNameS, birthName: request.body.birthNameS,likes: request.body.likesS},{
+    db.collection('keys').updateOne({appName: request.body.appNameS, securityCode: request.body.securityCodeS,likes: request.body.likesS},{
         $set: {
             likes:request.body.likesS + 1
           }
@@ -56,8 +56,8 @@ app.put('/addOneLike', (request, response) => {
 
 })
 
-app.delete('/deleteRapper', (request, response) => {
-    db.collection('rappers').deleteOne({stageName: request.body.stageNameS})
+app.delete('/deleteKey', (request, response) => {
+    db.collection('keys').deleteOne({appName: request.body.appNameS})
     .then(result => {
         console.log('Rapper Deleted')
         response.json('Rapper Deleted')
